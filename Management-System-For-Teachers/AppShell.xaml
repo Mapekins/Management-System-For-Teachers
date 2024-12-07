@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Management_System_For_Teachers.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Core;assembly=CommunityToolkit.Maui.Core"
+    xmlns:local="clr-namespace:Management_System_For_Teachers"
+    Shell.TabBarIsVisible="True" 
+    Shell.NavBarIsVisible="True"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Management_System_For_Teachers">
+
+    <TabBar>
+        <!--Navigācijas saišu uz lapām izveide-->
+        <Tab Title="MainPage">
+            <ShellContent
+            Title="Mainpage"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        </Tab>
+        <Tab Title="Students">
+            <ShellContent
+            Title="Students"
+            ContentTemplate="{DataTemplate local:StudentPage}"
+            Route="StudentPage" />
+        </Tab>
+        <Tab Title="Teachers">
+            <ShellContent
+            Title="Teachers"
+            ContentTemplate="{DataTemplate local:TeacherPage}"
+            Route="TeacherPage" />
+        </Tab>
+        <Tab Title="Courses">
+            <ShellContent
+            Title="Courses"
+            ContentTemplate="{DataTemplate local:CoursePage}"
+            Route="CoursePage" />
+        </Tab>
+        <Tab Title="Assignments">
+            <ShellContent
+            Title="Assignments"
+            ContentTemplate="{DataTemplate local:AssignmentPage}"
+            Route="AssignmentPage" />
+        </Tab>
+        <Tab Title="Submissions">
+            <ShellContent
+            Title="Submissions"
+            ContentTemplate="{DataTemplate local:SubmissionPage}"
+            Route="SubmissionPage" />
+        </Tab>
+        <Tab Title="Create test data">
+            <ShellContent
+            Title="Create test data"
+            ContentTemplate="{DataTemplate local:CreateTestDataPage}"
+            Route="CreateTestDataPage" />
+        </Tab>
+    </TabBar>
+</Shell>

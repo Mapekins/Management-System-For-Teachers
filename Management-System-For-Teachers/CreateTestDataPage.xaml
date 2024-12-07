@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Management_System_For_Teachers.CreateTestDataPage"
+             Title="Create test data">
+    <!-- izmantoju VerticalStackLayout, lai pivienot elementus.-->
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="30"
+        MinimumWidthRequest="500"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <!--Poga, kas izveido testa datus-->
+        <Button x:Name="CreateTestData" Text="Create test data" Clicked="OnCreateTestDataClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Management_System_For_Teachers.CoursePage"
+             Title="Course">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <VerticalStackLayout Grid.Row="0" Spacing="5" Margin="10">
+            <Entry x:Name ="CourseNameEntry" Placeholder="Name" MinimumWidthRequest="300" HorizontalOptions="Start"/>
+            <Label Text="Teacher"/>
+            <Picker x:Name="TeacherPicker" MinimumWidthRequest="300" HorizontalOptions="Start" ItemDisplayBinding="{Binding FullName}"/>
+            <Button x:Name="CreateButton" Text="Create Course" Clicked="OnCreateClicked" BackgroundColor="Green" HorizontalOptions="EndAndExpand" Margin="10"/>
+        </VerticalStackLayout>
+        <ScrollView Padding="0" Margin="0" Grid.Row="1">
+            <ListView x:Name="listView" HasUnevenRows="True" Margin="0,0,0,50" ItemTapped="OnListItemTapped">
+                <ListView.Header>
+                    <Grid ColumnSpacing="10" Padding="5" BackgroundColor="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Course name&#x0a;Teacher name" FontAttributes="Bold" Padding="5"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell x:Name="viewCell">
+                            <VerticalStackLayout Padding="5">
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Grid ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding TeacherName}"/>
+                                    <Button Grid.Column="1" x:Name="EditButton"  Text="Edit" Clicked="OnEditClicked" BackgroundColor="DeepSkyBlue"/>
+                                    <Button Grid.Column="2" x:Name="DeleteButton" Text="Delete" Clicked="OnDeleteClicked" BackgroundColor="OrangeRed"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </Grid>
+</ContentPage>
